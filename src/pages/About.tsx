@@ -45,10 +45,16 @@ const About = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Urban Pinnacle</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+      <section className="relative py-24 bg-gradient-hero overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-glow opacity-30" />
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="mb-8">
+            <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold text-white border border-white/30 mb-6">
+              🏢 About Our Company
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white">About Urban Pinnacle</h1>
+          <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
             For over 15 years, Urban Pinnacle Construction and Consultancy has been at the forefront 
             of transforming architectural visions into reality, delivering excellence through innovation, 
             expertise, and unwavering commitment to quality.
@@ -57,13 +63,22 @@ const About = () => {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">Our Foundation</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The core principles that guide every decision we make and every project we undertake
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center shadow-corporate border-0">
-              <CardHeader>
-                <Target className="w-16 h-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
+            <Card className="text-center bg-gradient-card border-0 shadow-float hover:-translate-y-3 transition-all duration-300 group">
+              <CardHeader className="pb-4">
+                <div className="relative w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                  <Target className="w-10 h-10 text-white" />
+                  <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
@@ -73,10 +88,13 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center shadow-corporate border-0">
-              <CardHeader>
-                <Eye className="w-16 h-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
+            <Card className="text-center bg-gradient-card border-0 shadow-float hover:-translate-y-3 transition-all duration-300 group">
+              <CardHeader className="pb-4">
+                <div className="relative w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                  <Eye className="w-10 h-10 text-white" />
+                  <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
@@ -86,10 +104,13 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center shadow-corporate border-0">
-              <CardHeader>
-                <Award className="w-16 h-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Our Values</CardTitle>
+            <Card className="text-center bg-gradient-card border-0 shadow-float hover:-translate-y-3 transition-all duration-300 group">
+              <CardHeader className="pb-4">
+                <div className="relative w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                  <Award className="w-10 h-10 text-white" />
+                  <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors">Our Values</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
@@ -142,17 +163,18 @@ const About = () => {
 
           <div className="grid md:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-corporate transition-shadow">
+              <Card key={index} className="text-center bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group">
                 <CardHeader>
-                  <div className="w-24 h-24 bg-gradient-corporate rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="relative w-24 h-24 bg-gradient-hero rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
                     <Users className="w-12 h-12 text-white" />
+                    <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <CardTitle className="text-lg">{member.name}</CardTitle>
-                  <p className="text-primary font-medium">{member.position}</p>
+                  <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors">{member.name}</CardTitle>
+                  <p className="text-primary font-semibold">{member.position}</p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-2">{member.experience}</p>
-                  <p className="text-sm">{member.specialty}</p>
+                  <p className="text-sm text-muted-foreground mb-2 font-medium">{member.experience}</p>
+                  <p className="text-sm font-medium">{member.specialty}</p>
                 </CardContent>
               </Card>
             ))}

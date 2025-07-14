@@ -107,10 +107,16 @@ const Projects = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Projects</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+      <section className="relative py-24 bg-gradient-hero overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-glow opacity-30" />
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="mb-8">
+            <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold text-white border border-white/30 mb-6">
+              🏗️ Our Portfolio
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white">Our Projects</h1>
+          <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
             Explore our portfolio of successfully completed projects across residential, commercial, 
             and industrial sectors. Each project represents our commitment to quality and innovation.
           </p>

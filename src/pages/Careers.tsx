@@ -115,10 +115,16 @@ const Careers = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+      <section className="relative py-24 bg-gradient-hero overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-glow opacity-30" />
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="mb-8">
+            <span className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold text-white border border-white/30 mb-6">
+              🚀 Join Our Team
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white">Join Our Team</h1>
+          <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
             Build your career with Urban Pinnacle. We're looking for passionate professionals 
             who share our commitment to excellence and innovation in construction and consultancy.
           </p>
@@ -137,15 +143,16 @@ const Careers = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center hover:shadow-corporate transition-shadow">
+              <Card key={index} className="text-center bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-gradient-corporate rounded-full flex items-center justify-center mb-4">
-                    <benefit.icon className="w-8 h-8 text-white" />
+                  <div className="relative mx-auto w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                    <benefit.icon className="w-10 h-10 text-white" />
+                    <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <CardTitle className="text-lg">{benefit.title}</CardTitle>
+                  <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
