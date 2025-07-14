@@ -13,31 +13,32 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, location, completionDate, category, description, image }: ProjectCardProps) => {
   return (
-    <Card className="overflow-hidden hover:shadow-corporate transition-all duration-300 group">
+    <Card className="overflow-hidden bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group">
       <div className="relative overflow-hidden">
         <img 
           src={image} 
           alt={title}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        <Badge className="absolute top-4 left-4 bg-gradient-hero text-white border-0 shadow-soft font-semibold px-3 py-1">
           {category}
         </Badge>
       </div>
       <CardContent className="p-6">
-        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+        <p className="text-muted-foreground text-sm mb-6 line-clamp-2 leading-relaxed">
           {description}
         </p>
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <div className="flex items-center gap-1">
-            <MapPin size={12} />
+        <div className="flex items-center justify-between text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 font-medium">
+            <MapPin size={14} className="text-primary" />
             <span>{location}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Calendar size={12} />
+          <div className="flex items-center gap-2 font-medium">
+            <Calendar size={14} className="text-primary" />
             <span>{completionDate}</span>
           </div>
         </div>

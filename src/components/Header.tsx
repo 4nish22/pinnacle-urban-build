@@ -19,10 +19,13 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-soft">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="text-xl font-bold text-primary">
+    <header className="sticky top-0 z-50 w-full bg-glass-bg backdrop-blur-xl supports-[backdrop-filter]:bg-glass-bg border-b border-glass-border shadow-soft">
+      <div className="container mx-auto px-6 h-18 flex items-center justify-between">
+        <Link to="/" className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-gradient-hero rounded-xl flex items-center justify-center shadow-soft">
+            <span className="text-white font-bold text-lg">UP</span>
+          </div>
+          <div className="text-xl font-bold bg-gradient-to-r from-corporate-blue to-corporate-blue-dark bg-clip-text text-transparent">
             Urban Pinnacle
           </div>
         </Link>
@@ -49,7 +52,7 @@ const Header = () => {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <Button variant="glass" size="sm" className="flex items-center gap-2">
             <Phone size={16} />
             Call Us
           </Button>

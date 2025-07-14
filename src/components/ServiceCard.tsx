@@ -10,20 +10,21 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon: Icon, title, description, features }: ServiceCardProps) => {
   return (
-    <Card className="h-full hover:shadow-corporate transition-all duration-300 border-border group">
-      <CardHeader className="text-center">
-        <div className="mx-auto w-16 h-16 bg-gradient-corporate rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-          <Icon className="w-8 h-8 text-white" />
+    <Card className="h-full bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group backdrop-blur-sm">
+      <CardHeader className="text-center pb-4">
+        <div className="relative mx-auto w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+          <Icon className="w-10 h-10 text-white" />
+          <div className="absolute inset-0 bg-gradient-glow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
-        <CardTitle className="text-xl font-semibold">{title}</CardTitle>
+        <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{title}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground mb-4 text-center">{description}</p>
-        <ul className="space-y-2">
+      <CardContent className="pt-0">
+        <p className="text-muted-foreground mb-6 text-center leading-relaxed">{description}</p>
+        <ul className="space-y-3">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center text-sm">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-              {feature}
+            <li key={index} className="flex items-center text-sm font-medium">
+              <div className="w-2 h-2 bg-gradient-hero rounded-full mr-3 flex-shrink-0 shadow-sm" />
+              <span className="text-foreground">{feature}</span>
             </li>
           ))}
         </ul>

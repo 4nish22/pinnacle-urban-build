@@ -72,28 +72,33 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
         </div>
         
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-6">
+          <div className="mb-8">
+            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold border border-white/20 mb-6">
+              🏗️ Building Tomorrow's Landmarks
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             Shaping Urban Skylines with 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300"> Precision and Expertise</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500"> Precision and Expertise</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200">
-            Trusted partners for construction excellence and strategic consultancy
+          <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            Trusted partners for construction excellence and strategic consultancy across India
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="lg" className="group">
               Get in Touch
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+            <Button size="lg" variant="glass" className="text-white border-white/30">
               Our Services
             </Button>
           </div>
@@ -101,13 +106,16 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-subtle">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-subtle relative">
+        <div className="absolute inset-0 bg-gradient-glow opacity-30" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+              <div key={index} className="text-center group">
+                <div className="bg-gradient-card rounded-2xl p-6 shadow-corporate hover:shadow-float transition-all duration-300 hover:-translate-y-1">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-corporate-blue-dark bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
+                  <div className="text-muted-foreground font-semibold text-sm">{stat.label}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -128,37 +136,43 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border-0 shadow-soft">
+            <Card className="text-center bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group">
               <CardHeader>
-                <Building2 className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Expert Team</CardTitle>
+                <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                  <Building2 className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">Expert Team</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Our skilled professionals bring decades of combined experience to every project.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-0 shadow-soft">
+            <Card className="text-center bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group">
               <CardHeader>
-                <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Client-Focused</CardTitle>
+                <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">Client-Focused</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   We prioritize clear communication and collaboration throughout every project.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-0 shadow-soft">
+            <Card className="text-center bg-gradient-card border-0 shadow-corporate hover:shadow-float hover:-translate-y-2 transition-all duration-300 group">
               <CardHeader>
-                <Trophy className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle>Quality Excellence</CardTitle>
+                <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                  <Trophy className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">Quality Excellence</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Rigorous quality standards ensure every project meets the highest expectations.
                 </p>
               </CardContent>
@@ -202,9 +216,9 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="outline" size="lg">
+            <Button variant="glass" size="lg" className="group">
               View All Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
@@ -219,13 +233,13 @@ const Index = () => {
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Let's discuss how we can bring your construction and consultancy needs to life with our expert team.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              <Phone className="mr-2 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 group">
+              <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               Call Now
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-              <Mail className="mr-2 h-5 w-5" />
+            <Button size="lg" variant="glass" className="text-white border-white/30 hover:bg-white/10 group">
+              <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Send Message
             </Button>
           </div>
