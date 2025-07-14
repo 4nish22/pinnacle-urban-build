@@ -2,39 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Urban Pinnacle Construction Design System 
+Primary: #0294C5 (Corporate Blue) - hsl(199, 96%, 38%)
+Secondary: Black - hsl(0, 0%, 0%)
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Corporate blue as primary */
+    --primary: 199 96% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Light gray for secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Subtle gray for muted elements */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Slight blue tint for accents */
+    --accent: 199 20% 96%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 199 96% 38%;
+
+    /* Custom design tokens */
+    --corporate-blue: 199 96% 38%;
+    --corporate-blue-dark: 199 96% 28%;
+    --corporate-blue-light: 199 96% 88%;
+    --corporate-black: 0 0% 0%;
+    --corporate-gray: 0 0% 45%;
+    --corporate-light-gray: 0 0% 96%;
+    
+    /* Gradients */
+    --gradient-corporate: linear-gradient(135deg, hsl(var(--corporate-blue)), hsl(var(--corporate-blue-dark)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--corporate-light-gray)));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(var(--corporate-blue) / 0.1);
+    --shadow-corporate: 0 4px 20px hsl(var(--corporate-blue) / 0.15);
+    --shadow-elegant: 0 8px 30px hsl(0 0% 0% / 0.1);
 
     --radius: 0.5rem;
 
@@ -100,6 +123,6 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
   }
 }
